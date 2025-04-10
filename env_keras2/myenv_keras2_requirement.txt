@@ -1,0 +1,13 @@
+lbn==1.2.2
+keras==2.14
+tensorflow==2.14
+numpy==1.23.5
+mplhep
+pandas
+matplotlib
+seaborn
+tensorflow
+tqdm
+scikit-learn
+vector
+tables

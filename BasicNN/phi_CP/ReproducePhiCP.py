@@ -224,15 +224,15 @@ plotit([phicp_gen_reco_dict['phicp']], wt_list, "PhiCP_Gen_Reco")
 
 #pt1  = ak.from_numpy(newdf["pt_tau_1_regress"].to_numpy())[:,None]
 pt1  = ak.from_numpy(newdf["pt1"].to_numpy())[:,None]
-# eta1  = ak.from_numpy(newdf["eta1"].to_numpy())[:,None]
-# phi1  = ak.from_numpy(newdf["phi1"].to_numpy())[:,None]
+eta1  = ak.from_numpy(newdf["eta1"].to_numpy())[:,None]
+phi1  = ak.from_numpy(newdf["phi1"].to_numpy())[:,None]
 #eta1 = ak.Array(newdf["eta1"])[:,None]
 #phi1 = ak.Array(newdf["phi1"])[:,None]
 
 #pt2  = ak.from_numpy(newdf["pt_tau_2_regress"].to_numpy())[:,None]
 pt2  = ak.from_numpy(newdf["pt2"].to_numpy())[:,None]
-# eta2  = ak.from_numpy(newdf["eta2"].to_numpy())[:,None]
-# phi2  = ak.from_numpy(newdf["phi2"].to_numpy())[:,None]
+eta2  = ak.from_numpy(newdf["eta2"].to_numpy())[:,None]
+phi2  = ak.from_numpy(newdf["phi2"].to_numpy())[:,None]
 #eta2 = ak.Array(newdf["eta2"])[:,None]
 #phi2 = ak.Array(newdf["phi2"])[:,None]
 
@@ -245,11 +245,14 @@ p4h1 = P4_reg_dict["p4h1"]
 p4h1 = ak.with_field(p4h1, pt1, "pt")
 # p4h1 = ak.with_field(p4h1, eta1, "eta")
 # p4h1 = ak.with_field(p4h1, phi1, "phi")
+# p4h1 = ak.with_field(p4h1, ak.ones_like(phi1)*1.777, "mass") # ADD THIS
+
 
 p4h2 = P4_reg_dict["p4h2"]
 p4h2 = ak.with_field(p4h2, pt2, "pt")
 # p4h2 = ak.with_field(p4h2, eta2, "eta")
 # p4h2 = ak.with_field(p4h2, phi2, "phi")
+# p4h2 = ak.with_field(p4h2, ak.ones_like(phi2)*1.777, "mass") # ADD THIS
 
 P4_reg_dict["p4h1"] = p4h1
 P4_reg_dict["p4h2"] = p4h2
